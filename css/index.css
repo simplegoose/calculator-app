@@ -271,11 +271,11 @@ body.theme__1 .attribution a {
 @media screen and (min-width: 768px){
     body {
         max-width: 500px;
-        margin: 7rem auto auto;
+        margin: 2rem auto auto;
     }
 
     .attribution {
-        margin: 2.5rem auto 0;
+        margin: 2.5rem auto;
         font-size: 0.7rem;
     }
 }
