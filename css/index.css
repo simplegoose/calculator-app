@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'Spartan';
+    src: url(https://fonts.google.com/specimen/Spartan);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 2rem 1.5rem auto;
+    font-family: 'Spartan', sans-serif;
+    font-size: 16px;
+    color: var(--main-font-color);
+    background-color: var(--main-background);
+}
+
+body.theme__1 {
+    --main-background: hsl(222, 26%, 31%);
+    --toggle-background-keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+    --key-background-1: hsl(225, 21%, 49%);
+    --key-shadow-1: hsl(224, 28%, 35%);
+    --key-background-toggle: hsl(6, 63%, 50%);
+    --key-shadow-2: hsl(6, 70%, 34%);
+    --key-background-2: hsl(30, 25%, 89%);
+    --key-shadow-3: hsl(28, 16%, 65%);
+    --main-font-color: #ffff;
+    --rs-equal-font-color: #ffff;  
+    --number-font-color: hsl(221, 14%, 31%);
+    --equal-font-color: #ffff;
+    --slider-left: 0.3rem;
+}
+
+body.theme__2 {
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-background-keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    --key-background-1: hsl(185, 42%, 37%);
+    --key-shadow-1: hsl(185, 58%, 25%);
+    --key-background-toggle: hsl(25, 98%, 40%);
+    --key-shadow-2: hsl(25, 99%, 27%);
+    --key-background-2: hsl(45, 7%, 89%);
+    --key-shadow-3: hsl(35, 11%, 61%);
+    --main-font-color: hsl(60, 10%, 19%); 
+    --rs-equal-font-color: #ffff; 
+    --number-font-color:  hsl(60, 10%, 19%);
+    --equal-font-color: #ffff;
+    --slider-left: 1.5rem;
+}
+
+body.theme__3 {
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-background-keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+    --key-background-1: hsl(281, 89%, 26%);
+    --key-shadow-1: hsl(285, 91%, 52%);
+    --key-background-toggle: hsl(176, 100%, 44%);
+    --key-shadow-2: hsl(177, 92%, 70%);
+    --key-background-2: hsl(268, 47%, 21%);
+    --key-shadow-3: hsl(290, 70%, 36%);
+    --main-font-color: hsl(52, 100%, 62%); 
+    --rs-equal-font-color: #ffff; 
+    --number-font-color:  hsl(52, 100%, 62%);
+    --equal-font-color: black;
+    --slider-left: 2.6rem
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-control-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.8rem;
+}
+
+.theme-control-wrapper span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    padding: 0.3rem;
+}
+
+.theme-number-slider-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-number-wrapper {
+    width: 90%;
+    margin: 0 auto 0.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.theme-number-wrapper span {
+    padding: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-slider-wrapper {
+    position: relative;
+    display: flex;
+    height: 1.5rem;
+    width: 4rem;
+    background-color: var(--toggle-background-keypad-background);
+    border-radius: 1rem;
+}
+
+.theme--slider {
+    position: absolute;
+    top: 0.25rem;
+    left: var(--slider-left);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--key-background-toggle);
+    -ms-transition: left 0.25s linear;
+    -moz-transition: left 0.25s linear;
+    -webkit-transition: left 0.25s linear;
+    -o-transition: left 0.25s linear;
+    transition: left 0.25s linear;
+}
+
+.theme-slider--overlays {
+    flex: 1;
+    height: 100%;
+}
+
+.calc-main {
+    margin: 1.8rem 0;
+}
+
+.calc-screen {
+    height: 5rem;
+    width: 100%;
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-align: end;
+    padding: 1.3rem;
+    background-color: var(--screen-background);
+    border-radius: 0.5rem;
+}
+
+.calc-keyboard-wrapper {
+    width: 100%;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+    background-color: var(--screen-background);
+    padding-bottom: 1rem;
+}
+
+.calc-keyboard-inner-wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.calc--numbers {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--key-background-2);
+    border-bottom: 4px solid var(--key-shadow-3);
+    border-radius: 0.5rem;
+    justify-self: center;
+}
+
+.calc--numbers:hover {
+    background-color: var(--key-shadow-3);
+}
+
+.calc--numbers span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--number-font-color);
+}
+
+.calc--numbers.del__ {
+    background-color: var(--key-background-1);
+    border-bottom: 4px solid var(--key-shadow-1);
+}
+
+.calc--numbers.del__:hover {
+    background-color: var(--key-shadow-1);
+}
+
+.calc--numbers.del__ span {
+    font-size: 0.9rem;
+    color: var(--rs-equal-font-color);
+}
+
+.calc__bottom {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.calc--numbers:hover,
+.calc__bottom:hover,
+.theme-slider-wrapper:hover {
+    cursor: pointer;
+}
+
+.calc--reset {
+    grid-column: 1/3;
+    background-color: var(--key-background-1);
+    border-bottom: 4px solid var(--key-shadow-1);
+}
+
+.calc--reset:hover {
+    background-color: var(--key-shadow-1);
+}
+
+.calc--reset span {
+    font-weight: 700;
+    color: var(--rs-equal-font-color);
+}
+
+.calc--equal {
+    grid-column: 3/5;
+    background-color: var(--key-background-toggle);
+    border-bottom: 4px solid var(--key-shadow-2);
+}
+
+.calc--equal:hover {
+    background-color: var(--key-shadow-2);
+}
+
+.calc--equal span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--equal-font-color);
+}
+
+.attribution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 2rem auto;
+    font-size: 0.5rem;
+    color: var(--main-font-color);
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--key-background-toggle);
+    opacity: 0.7;
+    text-align: center;
+}
+
+body.theme__1 .attribution a {
+    color: hsl(177, 92%, 70%);
+}
+
+@media screen and (min-width: 768px){
+    body {
+        max-width: 500px;
+        margin: 7rem auto auto;
+    }
+
+    .attribution {
+        margin: 2.5rem auto 0;
+        font-size: 0.7rem;
+    }
+}
+
+
