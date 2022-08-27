@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github repo](https://github.com/simplegoose/calculator-app.git)
-- Live Site URL: [Live site](https://simplegoose-calculator-app.vercel.app/)
+- Solution URL: [https://github.com/simplegoose/calculator-app.git](https://github.com/simplegoose/calculator-app.git)
+- Live Site URL: [https://simplegoose-calculator-app.vercel.app/](https://simplegoose-calculator-app.vercel.app/)
 
 ## My process
 
